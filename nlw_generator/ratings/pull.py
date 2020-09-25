@@ -1,4 +1,4 @@
-from nlw_generator.config import HTML_PARSER, FUTHEAD_URL, SPAN, CLASS, PGS_CLS, DIV, PLAYER_CLS, FUTHEAD_NO_PLATFORM_URL, PLAYER_NAME, STRONG, CLUB_LEAGUE_INFO, NAME, POSITION, LEAGUE, CLUB, ARG, BETTER_ARG, BUGGY_ARGENTINA_CLUBS, SERIE_B_CLUBS, SERIE_B, CHILE, CHILE_CLUBS
+from nlw_generator.config import HTML_PARSER, FUTHEAD_URL, SPAN, CLASS, PGS_CLS, DIV, PLAYER_CLS, FUTHEAD_NO_PLATFORM_URL, PLAYER_NAME, STRONG, CLUB_LEAGUE_INFO, NAME, POSITION, LEAGUE, CLUB, ARG, BETTER_ARG, BUGGY_ARGENTINA_CLUBS, SERIE_B_CLUBS, SERIE_B, CHILE, CHILE_CLUBS, STAT_CLS, STAT_TYPE_CLS, STAT_VAL_CLS
 from bs4 import BeautifulSoup
 from requests import get
 from pandas import DataFrame
@@ -41,6 +41,10 @@ def extract_player_info(domitem):
         league = BETTER_ARG
     else:
         (pos, club, league) = cl
+    for stat in domitem.findAll(SPAN, {CLASS: STAT_CLS}):
+        rtg = int(stat.find(SPAN, {CLASS: STAT_VAL_CLS}).text)
+        tp = stat.find(SPAN, {CLASS: STAT_TYPE_CLS}).text
+        d[tp] = rtg
     d[POSITION] = pos
     d[LEAGUE] = league
     d[CLUB] = club

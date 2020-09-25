@@ -16,6 +16,9 @@ PGS_CLS = 'font-12 font-bold margin-l-r-10'
 PLAYER_CLS = 'content player-item font-24'
 PLAYER_NAME = 'player-name'
 CLUB_LEAGUE_INFO = 'player-club-league-name'
+STAT_CLS = 'player-stat stream-col-60 hidden-md hidden-sm'
+STAT_VAL_CLS = 'value'
+STAT_TYPE_CLS = 'hover-label'
 
 # Buggy constants to account for
 ARG = 'Argentina'
