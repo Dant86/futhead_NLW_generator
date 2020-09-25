@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="futhead-NLW-generator-Dant86"
+    name="futhead-NLW-generator-Dant86",
     version="0.0.1",
     author="Vedant Pathak",
     author_email="vpathak@uchicago.edu",
