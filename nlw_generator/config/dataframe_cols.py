@@ -1,0 +1,11 @@
+NAME = 'name'
+POSITION = 'pos'
+LEAGUE = 'league'
+CLUB = 'club'
+
+PACE = 'PAC'
+SHOOTING = 'SHO'
+PASSING = 'PAS'
+DRIBBLING = 'DRI'
+DEFENDING = 'DEF'
+PHYSICAL = 'PHY'

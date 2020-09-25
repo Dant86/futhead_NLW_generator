@@ -1,7 +1,21 @@
-from nlw_generator.config import HTML_PARSER, FUTHEAD_URL, SPAN, CLASS, PGS_CLS, DIV, PLAYER_CLS, FUTHEAD_NO_PLATFORM_URL, PLAYER_NAME, STRONG, CLUB_LEAGUE_INFO, NAME, POSITION, LEAGUE, CLUB, ARG, BETTER_ARG, BUGGY_ARGENTINA_CLUBS, SERIE_B_CLUBS, SERIE_B, CHILE, CHILE_CLUBS, STAT_CLS, STAT_TYPE_CLS, STAT_VAL_CLS
+from nlw_generator.config.club_league_constants import ARG, \
+                                                       BETTER_ARG, \
+                                                       SERIE_B, CHILE, \
+                                                       ARG_CLUBS, \
+                                                       SERIE_B_CLUBS, \
+                                                       CHILE_CLUBS
+from nlw_generator.config.dataframe_cols import NAME, POSITION, \
+                                                LEAGUE, CLUB
+from nlw_generator.config.url_details import FUTHEAD_URL, \
+                                             FUTHEAD_NO_PLATFORM_URL
+from nlw_generator.config.parsing import HTML_PARSER, SPAN, DIV, \
+                                         CLASS, PGS_CLS, PLAYER_CLS, \
+                                         PLAYER_NAME, \
+                                         CLUB_LEAGUE_INFO, STAT_CLS, \
+                                         STAT_VAL_CLS, STAT_TYPE_CLS
 from bs4 import BeautifulSoup
-from requests import get
 from pandas import DataFrame
+from requests import get
 
 
 def get_list_pages():
@@ -20,11 +34,9 @@ def extract_player_info(domitem):
     clinfo = domitem.find(SPAN, {CLASS: CLUB_LEAGUE_INFO})
     cl = clinfo.text.replace('\n', '').split('|')
     cl = tuple(map(lambda x: x.strip(), cl))
-    print(d[NAME])
-    print(cl)
     if len(cl) == 1:
         return {}
-    if cl[1] in BUGGY_ARGENTINA_CLUBS:
+    if cl[1] in ARG_CLUBS:
         pos = cl[0]
         club = cl[1]
         league = BETTER_ARG
@@ -61,4 +73,3 @@ def pull_players():
         players = body.findAll(DIV, {CLASS: PLAYER_CLS})
         pls += list(map(extract_player_info, players))
     return DataFrame(pls)
-
