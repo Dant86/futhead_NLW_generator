@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: futhead-NLW-generator-Dant86
+Version: 0.0.1
+Summary: A Fifa NLW generator
+Home-page: https://github.com/Dant86/futhead_NLW_generator
+Author: Vedant Pathak
+Author-email: vpathak@uchicago.edu
+License: UNKNOWN
+Description: # Futhead NLW Generator
+        
+        # Brief Description
+        - Generates an NLW squad using Futhead's ratings.
+            - NLW means "no links wasted", meaning that each player has as many dead links as strong links in a squad.
+        - Given no constraints, it should construct the highest possible rated squad.
+        - The algorithm should be along the lines of recursive backtracking -- inefficient but easy. I suspect the slowest part of this application will be checking if the squad satisfies the NLW constraints.
+        
+        # TODO
+        - Pull ratings from Futhead
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown

@@ -1,0 +1,10 @@
+README.md
+setup.py
+futhead_NLW_generator_Dant86.egg-info/PKG-INFO
+futhead_NLW_generator_Dant86.egg-info/SOURCES.txt
+futhead_NLW_generator_Dant86.egg-info/dependency_links.txt
+futhead_NLW_generator_Dant86.egg-info/top_level.txt
+nlw_generator/__init__.py
+nlw_generator/config.py
+nlw_generator/ratings/__init__.py
+nlw_generator/ratings/pull.py
