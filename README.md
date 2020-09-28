@@ -7,4 +7,4 @@
 - The algorithm should be along the lines of recursive backtracking -- inefficient but easy. I suspect the slowest part of this application will be checking if the squad satisfies the NLW constraints.
 
 # TODO
-- Represent formations as graphs
+- Predefine formations inside a submodule of `formations` so that users don't have to provide bespoke `.form` files or define their own classes.
