@@ -18,4 +18,6 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     python_requires='>=3.7',
+    test_suite='nose.collector',
+    tests_require=['pandas', 'nose'],
 )

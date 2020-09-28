@@ -1,0 +1,3 @@
+POS = 'POS'
+LINKS = 'LINKS'
+ACTIVE_P = 'ACTIVE_P'
