@@ -1,7 +1,9 @@
+OVR = 'overall'
 NAME = 'name'
 POSITION = 'pos'
 LEAGUE = 'league'
 CLUB = 'club'
+COUNTRY = 'country'
 
 PACE = 'PAC'
 SHOOTING = 'SHO'
